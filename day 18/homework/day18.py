@@ -1,44 +1,92 @@
-#დავალება 1
+#შემდეგი კოდი შეგიძლიათ გაუშვათ, როგორც სწორი პირველი ნაწილის გაშვების შემდეგ, 
+#ასევე შეგიძლიათ გააკეთოთ ეკრანზე გამოსახვის მისაღებად, როგორც ეს მაგალითია:
 
-numbers = [17, 25, 10, 42, 8, 36, 50, 29, 63, 5]
+numbers = []
 
+# პირველი ნაწილი
+for i in range(50,60+1):
+    numbers.append(i)
 
-largest = numbers[0]
+# მეორე ნაწილი
+even_numbers = []
 
-for num in numbers:
-    if num > largest:
-        largest = num
+for index in range(0, len(numbers)):
+    if numbers[index] % 2 == 0:  # კორექტული პარამეტრების გამოყენება
+        even_numbers.append(str(numbers[index]) + "-" + str(index))
 
+print(numbers)
+print(even_numbers)
 
+Paint #ში განახლებული ალგორითმის გასაშვებად მივიღებთ შემდეგ გამოსახულებას:
 
-print("Largest number in the list:", largest)
+1. #შექმენით მასივი numbers, რომელშიც განვსაზღვრავთ 50-დან 60-მდე ყველა რიცხვს.
+2. #შექმენით ცარიელი მასივი even_numbers, რომელშიც ვინახავთ ლუწ რიცხვებს და მათი ინდექსების ნამბერებს.
+3. #გამოიტანეთ მთელი numbers მასივი და even_numbers მასივი ეკრანზე.
 
-#დავალება 2
-
-numbers = list(range(30, 51))
-
-odd_count = 0
-
-# Count odd numbers
-for num in numbers:
-    if num % 2 != 0:
-        odd_count += 1
-
-print("Count of odd numbers:", odd_count)
-
-#დავალება 3
-
-multiples_of_4 = [num for num in range(10, 51) if num % 4 == 0]
-
-multiples_of_4.reverse()
-
-print("Reversed list of multiples of 4:", multiples_of_4)
-
-#დავალება 4
-
-numbers = list(range(50, 101))
+#შემდეგ, როდესაც გამოვიყენებთ Paint-ს, შეგიძლიათ შექმნათ გამოსახულება,
+#რომელშიც იქვე წერია რიცხვები და მათი ინდექსები. 
+#შემდეგ, შეინახეთ გამოსახულება და გამოიტანეთ სურათა ფაილში.
 
 
-for index, num in enumerate(numbers):
-    if num % 2 == 0:
-        print(f"{num}-{index}", end=" ")
+
+1. #ნამრავლის გამოთვლა:
+
+def multiply_list(lst):
+    result = 1
+    for num in lst:
+        result *= num
+    return result
+
+# სიაში შემთხვევაში:
+my_list = [1, 2, 3, 4, 5]
+print("სიას ყველა ელემენტის ნამრავლია:", multiply_list(my_list))
+
+2. #უარყოფითი რიცხვების ამოღება:
+
+def get_negative_numbers(lst):
+    result = [num for num in lst if num < 0]
+    return result
+
+# სიაში შემთხვევაში:
+my_list = [1, -2, 3, -4, 5, -6]
+print("უარყოფითი რიცხვები:", get_negative_numbers(my_list))
+
+3. #საშუალოს პოვნა:
+
+def average_of_list(lst):
+    return sum(lst) / len(lst)
+
+# სიაში შემთხვევაში:
+my_list = [1, 2, 3, 4, 5]
+print("სიის საშუალო არითმეტიკული:", average_of_list(my_list))
+
+4. #სიების შეერთება:
+
+def merge_lists(list1, list2):
+    merged_list = list1 + list2
+    return merged_list
+
+# ორი სია:
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+print("ორი სიის შეერთება:", merge_lists(list1, list2))
+
+5. #დუბლიკატების სია:
+
+def remove_duplicates(lst):
+    return list(set(lst))
+
+# სია:
+my_list = [1, 2, 2, 3, 4, 4, 5]
+print("სიის დუბლიკატების წაშლა:", remove_duplicates(my_list))
+
+
+
+
+
+
+
+
+
+
+
